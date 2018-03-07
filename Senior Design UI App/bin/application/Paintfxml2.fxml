@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="522.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FxmlController">
+  <children>
+    <MenuBar fx:id="menubar" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem fx:id="open" mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefWidth="640.0" style="-fx-background-color: E4E4E4;" VBox.vgrow="ALWAYS">
+      <children>
+            <ColorPicker fx:id="colorpicker" layoutX="89.0" layoutY="1.0" prefHeight="46.0" prefWidth="61.0" style="-fx-background-color: transparent;" styleClass="button-no-border" />
+            <MenuButton layoutX="14.0" layoutY="1.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="29.0" style="-fx-background-color: transparent; -fx-background-radius: 0;">
+              <items>
+                <MenuItem mnemonicParsing="false" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <Slider fx:id="bsize" orientation="VERTICAL" />
+                     </graphic></MenuItem>
+              </items>
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@sizeicon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </MenuButton>
+            <ImageView fitHeight="29.0" fitWidth="31.0" layoutX="95.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@coloricon.png" />
+               </image>
+            </ImageView>
+      </children>
+    </AnchorPane>
+      <StackPane prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <Canvas fx:id="canvas" height="442.0" width="645.0" />
+            <ImageView fx:id="template" fitHeight="442.0" fitWidth="645.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </StackPane>
+  </children>
+</VBox>
